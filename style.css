@@ -19,12 +19,13 @@ input:focus {
 }
 
 :root {
-  background-color: hsl(0, 0%, 1%);
+  background-color: hsl(0, 0%, 5%);
   font-family: "JetBrains Mono", monospace;
   font-family: "VT323", monospace;
   color: white;
   font-size: 25px;
   text-shadow: 0 0 1.5px #fff;
+  caret-shape: block;
 }
 
 body {
@@ -32,13 +33,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 0 200px 20px rgba(0,0,0,0.9) inset;;
 }
 
 img[src="Small-Nyx.gif"] {
   filter: grayscale(100%);
+  width: 40vw;
   max-width: 50vw;
   background: transparent;
   filter: contrast(150px);
+  transform: translate(10%);
 }
 
 form {
@@ -52,7 +56,7 @@ form {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: auto 20vw;
+  margin: auto 10vw;
 }
 
 label {
@@ -76,37 +80,53 @@ label {
   translate: -20px;
 }
 
+.center {
+  position: absolute;
+  z-index: 1000;
+  width: 1px;
+  background-color: blue;
+  height: 100vh;
+  right: 50%;
+}
+
 button {
   z-index: 0;
-  background-color: #000;
+  background-color: transparent;
   border: #fff solid 4px;
   box-shadow: 0 0 1.5px;
   color: #fff;
   font-family: inherit;
   font-size: 25px;
   text-shadow: inherit;
-  margin-top: 20px;
+  margin: 20px auto;
   padding: 10px;
   box-sizing: border-box;
+  transform: translate(-100%);
+}
+
+button:hover {
+  background-color: #7f7f7f;
+  color: #000;
 }
 
 div.color {
   position: absolute;
-  z-index: 10;
+  z-index: 100;
   background-color: lightskyblue;
   height: 100%;
   width: 100%;
   pointer-events: none;
   mix-blend-mode: overlay;
-  backdrop-filter: blur(0.5px);
-}
 
-input::placeholder {
-  animation: blinker 0.5s linear infinite;
+  backdrop-filter: blur(1px);
 }
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
+/*
+div.vignette {
+  width: 100%;
+  height: 100%;
+  z-index: 90;
+  position: absolute;
+  background: radial-gradient(#e6646400, #2e2e2e);
+  background-size: 300%;
+  filter: blur(100px);
 }
