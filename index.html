@@ -16,26 +16,19 @@
   <body>
     <div class="color"></div>
     <div class="vignette"></div>
-    <img src="Small-Nyx.gif" alt="A gif of a small pixel art cat">
-    <form action="post">
-        <div class="signup">
+   <div class="container">
+    <form action="post" class="signup">
+       <img src="Small-Nyx.gif" alt="A gif of a small pixel art cat">
             <section class="col1">
-                <label for="first">First:</label>
-                <label for="last">Last:</label>
-                <label for="email">Email:</label>
-                <label for="phone">Phone:</label>
-                <label for="pw">Password:</label>
-                <label for="confirm">Confirm Password:</label>
+                <label for="first">First: <input type="text" name="first" placeholder="" autofocus required/></label>
+                <label for="last">Last:  <input type="text" name="last" placeholder="" required/></label>
+                <label for="email">Email: <input type="email" placeholder="" required/></label>
+                <label for="phone">Phone: <input type="tel" placeholder=""></label>
+                <label for="pw">Password: <input type="password" name="pw" placeholder="" required></label>
+                <label for="confirm">Confirm Password: <input type="password" name="password" placeholder="" required></label>
+                     <button type="submit">Join</button>
             </section>
-            <section class="col2">
-                <input type="text" name="first" placeholder="" autofocus required/>
-                <input type="text" name="last" placeholder="" required/>
-                <input type="email" placeholder="" required/>
-                <input type="tel" placeholder="">
-                <input type="password" name="pw" placeholder="" required>
-                <input type="password" name="password" placeholder="" required>
-            </section>
-        </div>
     </form>
-     <button type="submit">Join Us</button>
+    </div>
+
 </html>
